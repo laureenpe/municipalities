@@ -5,7 +5,7 @@
 
       <div class="container">
         <div class="block-autocomplete">
-          <div class="flex-6">
+          <div class="flex-6 my-5">
             <input
               v-model="cityName"
               type="autocomplete"
@@ -13,7 +13,7 @@
             >
             <button>↩</button>
           </div>
-          <span class="custom-dropdown flex-6">
+          <span class="custom-dropdown flex-6 my-5">
             <select v-model="selectedStatus">
               <option
                 disabled
@@ -114,6 +114,10 @@ h1 {
 .py-5 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.my-5{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .card {
   background-image: linear-gradient(
