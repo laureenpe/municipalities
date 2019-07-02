@@ -1,10 +1,12 @@
 <template>
   <div>
     <main>
-      <h1 class="py-5">Trondheim Municipalities</h1>
-
+      <h1 class="py-5">Trondheim municipalities</h1>
+      <p>Here you cand find the Trondheim municipalities, including its <strong>number</strong>, <strong>name</strong>, and when it will/got <strong>retired</strong>/active.
+        You can also <strong>filter</strong> by name and for status.
+      </p>
       <div class="container">
-        <div class="block-autocomplete">
+        <div class="autocomplete d-flex row">
           <div class="flex-6 my-5">
             <input
               v-model="cityName"
@@ -28,7 +30,14 @@
         </div>
       </div>
 
-      <section>
+      <div v-if="items.length == 0">
+        <img
+          src="../assets/images/loader.svg"
+          alt="loader"
+        >
+      </div>
+
+      <section v-if="items.length > 0">
         <article
           class="flex-element"
           v-for="item in items"
@@ -98,7 +107,8 @@ export default {
     cityName(name) {
       //Filter by name, binded with input
       this.items = this.municipalities.filter(function(item) {
-        return item.description.includes(name);
+        const description = item.description.toLowerCase();
+        return description.includes(name.toLowerCase());
       });
     }
   }
@@ -111,11 +121,15 @@ export default {
 h1 {
   font-weight: bold;
 }
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+}
 .py-5 {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.my-5{
+.my-5 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
