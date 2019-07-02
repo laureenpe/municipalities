@@ -41,6 +41,11 @@ article {
 }
 
 
+.row {
+   flex-direction: row;
+}
+
+
 
 /* Media queries*/
 @media only screen and (min-width: 960px) {
