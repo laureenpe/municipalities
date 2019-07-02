@@ -7,9 +7,9 @@
         <div class="block-autocomplete">
           <div class="flex-6">
             <input
-              id="input"
+              v-model="cityName"
               type="autocomplete"
-              placeholder="Filter..."
+              placeholder="Write the name of the city..."
             >
             <button>↩</button>
           </div>
@@ -66,7 +66,8 @@ export default {
       name: "Municipalities",
       municipalities: [],
       items: [],
-      selectedStatus: ""
+      selectedStatus: "",
+      cityName: ""
     };
   },
   async mounted() {
@@ -75,6 +76,11 @@ export default {
     this.municipalities.push(...containedItems);
     this.items.push(...containedItems);
     console.log(this.items);
+  },
+  methods: {
+    onSearchCity() {
+      console.log("buscar");
+    }
   },
   watch: {
     selectedStatus(val) {
@@ -95,6 +101,12 @@ export default {
       } else {
         this.items = this.municipalities;
       }
+    },
+    cityName(name) {
+      //Filter by name, binded with input
+      this.items = this.municipalities.filter(function(item) {
+        return item.description.includes(name);
+      });
     }
   }
 };
