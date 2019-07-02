@@ -11,19 +11,14 @@
 
 $pink: #c01b7c;
 
-.block-autocomplete {
-   position: relative;
+.autocomplete {
    margin: 1rem;
    padding: 1rem;
-   left: 0;
-   top: 0;
    background-color: white;
    border-radius: 0;
    font-size: 1.5rem;
    overflow: hidden;
    cursor: pointer;
-   display: flex;
-   flex-direction: row;
    max-width: 100%;
 
    button {
@@ -60,7 +55,7 @@ $pink: #c01b7c;
  */
 
 @media (min-width: 320px) and (max-width: 480px) {
-   .block-autocomplete {
+   .autocomplete {
       flex-direction: column;
    }
 }
