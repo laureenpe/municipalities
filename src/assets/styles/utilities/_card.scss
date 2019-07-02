@@ -1,5 +1,7 @@
+/* Cards
+/* =================================== */
 .card {
-   align-items: center;
+   //align-items: center;
    display: flex;
    justify-content: space-between;
    flex-direction: column;
@@ -14,21 +16,52 @@
 
 .card-header {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
+   justify-content: space-between;
    color: white;
    font-family: 'Open Sans', sans-serif;
    font-size: 1.3rem;
    font-weight: bold;
    text-align: center;
+   padding: 1rem;
 }
 
 .card-header {
-   h1 {
-      margin-bottom: 0.2rem;
-   }
 
    span {
       display: inline;
 
    }
+}
+
+.card-footer {
+   display: flex;
+   justify-content: space-between;
+   padding: 1rem;
+
+   span {
+      font-size: 1rem;
+   }
+}
+
+.animate {
+   animation: pulse 5s infinite;
+
+   @keyframes pulse {
+      0% {
+         background-color: #001f3f;
+      }
+
+      100% {
+         background-color: rgba(192, 27, 115, 1.8) 0%,
+      }
+   }
+}
+
+.animate-loop {
+   -webkit-animation: bounce 2s infinite 2s;
+   animation: bounce 2s infinite 2s;
+   -webkit-transition: all 0.2s ease-in;
+   transition: all 0.2s ease-in;
+   transform: scale(1);
 }
