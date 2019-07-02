@@ -13,7 +13,7 @@
             >
             <button>↩</button>
           </div>
-          <span class="custom-dropdown">
+          <span class="custom-dropdown flex-6">
             <select v-model="selectedStatus">
               <option
                 disabled
@@ -26,7 +26,6 @@
             </select>
           </span>
         </div>
-
       </div>
 
       <section>
@@ -75,7 +74,6 @@ export default {
     let containedItems = municipalities.data.containeditems;
     this.municipalities.push(...containedItems);
     this.items.push(...containedItems);
-    console.log(this.items);
   },
 
   watch: {
