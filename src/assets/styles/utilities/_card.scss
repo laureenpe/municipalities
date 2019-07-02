@@ -1,67 +1,73 @@
-/* Cards
+ /*   
+   1. Cards
+   2. Animation
 /* =================================== */
-.card {
-   //align-items: center;
-   display: flex;
-   justify-content: space-between;
-   flex-direction: column;
-   background-image: linear-gradient(352deg, rgba(192, 27, 115, 1.8) 0%, rgba(255, 154, 0, -0.8) 100%), url("/assets//images//Trondheim.jpg");
-   background-position: center;
-   background-size: 60rem;
-   height: 24rem;
-   width: 18rem;
-   border-radius: 0.3rem;
-   box-shadow: 0 0 2.5rem -0.5rem;
-}
 
-.card-header {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   color: white;
-   font-family: 'Open Sans', sans-serif;
-   font-size: 1.3rem;
-   font-weight: bold;
-   text-align: center;
-   padding: 1rem;
-}
+ //1. Card
+ .card {
+    //align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: linear-gradient(352deg, rgba(192, 27, 115, 1.8) 0%, rgba(255, 154, 0, -0.8) 100%), url("/assets//images//Trondheim.jpg");
+    background-position: center;
+    background-size: 60rem;
+    height: 24rem;
+    width: 18rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 2.5rem -0.5rem;
+ }
 
-.card-header {
+ .card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+ }
 
-   span {
-      display: inline;
+ .card-header {
 
-   }
-}
+    span {
+       display: inline;
 
-.card-footer {
-   display: flex;
-   justify-content: space-between;
-   padding: 1rem;
+    }
+ }
 
-   span {
-      font-size: 1rem;
-   }
-}
+ .card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
 
-.animate {
-   animation: pulse 5s infinite;
+    span {
+       font-size: 1rem;
+    }
+ }
 
-   @keyframes pulse {
-      0% {
-         background-color: #001f3f;
-      }
+ //2. Animation
 
-      100% {
-         background-color: rgba(192, 27, 115, 1.8) 0%,
-      }
-   }
-}
+ .animate {
+    animation: pulse 5s infinite;
 
-.animate-loop {
-   -webkit-animation: bounce 2s infinite 2s;
-   animation: bounce 2s infinite 2s;
-   -webkit-transition: all 0.2s ease-in;
-   transition: all 0.2s ease-in;
-   transform: scale(1);
-}
+    @keyframes pulse {
+       0% {
+          background-color: #001f3f;
+       }
+
+       100% {
+          background-color: rgba(192, 27, 115, 1.8) 0%,
+       }
+    }
+ }
+
+ .animate-loop {
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    transform: scale(1);
+ }
