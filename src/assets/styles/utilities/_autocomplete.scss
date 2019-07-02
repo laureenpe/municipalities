@@ -1,0 +1,136 @@
+/*   
+   1. Autocomplete
+   2. Select
+/* =================================== */
+
+// 1. Autocomplete
+
+*:focus {
+   outline: none;
+}
+
+$pink: #c01b7c;
+
+.block-autocomplete {
+   position: relative;
+   margin: 1rem;
+   padding: 1rem;
+   left: 0;
+   top: 0;
+   background-color: white;
+   border-radius: 0;
+   font-size: 1.5rem;
+   overflow: hidden;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   max-width: 100%;
+
+   button {
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1.5rem;
+      padding-right: 2rem;
+      color: #c1c1c1;
+      transition: inherit;
+      flex: 0;
+      height: 2rem;
+      margin-top: auto;
+      margin-bottom: auto;
+   }
+
+   &::focus-within,
+   ::active {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+   }
+
+   &:focus-within button {
+      color: $pink;
+   }
+
+   &:focus-within::before {
+      opacity: 1;
+   }
+}
+
+/* 
+   ##Device = Most of the Smartphones Mobiles (Portrait)
+   ##Screen = B/w 320px to 479px
+ */
+
+@media (min-width: 320px) and (max-width: 480px) {
+   .block-autocomplete {
+      flex-direction: column;
+   }
+}
+
+input[type="autocomplete"] {
+   font-size: 1.5rem;
+   border: none;
+   outline: none;
+   box-sizing: unset;
+   background: transparent;
+   opacity: 0.999;
+   flex: 1;
+   width: 100%;
+}
+
+
+// 2. Select
+.custom-dropdown {
+   position: relative;
+   display: inline-block;
+   vertical-align: middle;
+
+   select {
+      background: $pink;
+      color: #fff;
+      font-size: inherit;
+      padding: .5em;
+      padding-right: 2.5em;
+      border: 0;
+      margin: 0;
+      border-radius: 3px;
+      text-indent: 0.01px;
+      -webkit-appearance: button;
+      /* hide default arrow in chrome OSX */
+   }
+
+}
+
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+   content: "";
+   position: absolute;
+   pointer-events: none;
+}
+
+.custom-dropdown::after {
+   /*  Custom dropdown arrow */
+   content: "\25BC";
+   height: 1em;
+   font-size: .625em;
+   line-height: 1;
+   right: 1.2em;
+   top: 50%;
+   margin-top: -.5em;
+}
+
+.custom-dropdown::before {
+   /*  Custom dropdown arrow cover */
+   width: 2em;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown::before {
+   background-color: $pink;
+}
+
+.custom-dropdown::after {
+   color: rgba(0, 0, 0, .4);
+}
