@@ -77,14 +77,9 @@ export default {
     this.items.push(...containedItems);
     console.log(this.items);
   },
-  methods: {
-    onSearchCity() {
-      console.log("buscar");
-    }
-  },
+
   watch: {
     selectedStatus(val) {
-      console.log(val);
       if (val != "all") {
         let status = "";
         if (val == "valid") {
