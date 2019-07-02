@@ -14,11 +14,15 @@
             <button>↩</button>
           </div>
           <span class="custom-dropdown">
-            <select>
-              <option>status</option>
-              <option>retired</option>
-              <option>All</option>
-
+            <select v-model="selectedStatus">
+              <option
+                disabled
+                value=""
+              >select one</option>
+              <option value="valid">valid</option>
+              <option value="retired">retired</option>
+              <option value="submitted">submitted</option>
+              <option value="all">all</option>
             </select>
           </span>
         </div>
@@ -28,7 +32,7 @@
       <section>
         <article
           class="flex-element"
-          v-for="item in municipalities"
+          v-for="item in items"
           :key="item.id"
         >
           <div class="card">
@@ -60,14 +64,38 @@ export default {
   data() {
     return {
       name: "Municipalities",
-      municipalities: []
+      municipalities: [],
+      items: [],
+      selectedStatus: ""
     };
   },
   async mounted() {
     let municipalities = await axios.get(municipalitiesApi);
-    console.log(municipalities.data.containeditems);
-    let containeditems = municipalities.data.containeditems;
-    this.municipalities.push(...containeditems);
+    let containedItems = municipalities.data.containeditems;
+    this.municipalities.push(...containedItems);
+    this.items.push(...containedItems);
+    console.log(this.items);
+  },
+  watch: {
+    selectedStatus(val) {
+      console.log(val);
+      if (val != "all") {
+        let status = "";
+        if (val == "valid") {
+          status = "Gyldig";
+        } else if (val == "retired") {
+          status = "Utgått";
+        } else {
+          status = "Sendt inn";
+        }
+        //Filter all items with the norwegian status
+        this.items = this.municipalities.filter(function(item) {
+          return item.status == status;
+        });
+      } else {
+        this.items = this.municipalities;
+      }
+    }
   }
 };
 </script>
@@ -81,5 +109,13 @@ h1 {
 .py-5 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.card {
+  background-image: linear-gradient(
+      352deg,
+      rgba(192, 27, 115, 1.8) 0%,
+      rgba(255, 154, 0, -0.8) 100%
+    ),
+    url("../assets/images/trondheim.jpg");
 }
 </style>
