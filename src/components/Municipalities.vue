@@ -5,13 +5,24 @@
 
       <div class="container">
         <div class="block-autocomplete">
-          <input
-            id="input"
-            type="autocomplete"
-            placeholder="Filter..."
-          >
-          <button>↩</button>
+          <div class="flex-6">
+            <input
+              id="input"
+              type="autocomplete"
+              placeholder="Filter..."
+            >
+            <button>↩</button>
+          </div>
+          <span class="custom-dropdown">
+            <select>
+              <option>status</option>
+              <option>retired</option>
+              <option>All</option>
+
+            </select>
+          </span>
         </div>
+
       </div>
 
       <section>
@@ -64,63 +75,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style lang="scss" scoped>
+h1 {
+  font-weight: bold;
+}
 .py-5 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-//Autocomplete
-
-.block-autocomplete {
-  position: relative;
-  margin: 1rem;
-  padding: 1rem;
-  left: 0;
-  top: 0;
-  background-color: white;
-  border-radius: 0;
-  font-size: 2rem;
-  overflow: hidden;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  max-width: 100%;
-
-  button {
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 2rem;
-    padding-right: 2rem;
-    color: #c1c1c1;
-    transition: inherit;
-    flex: 0;
-    height: 2rem;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
-  &::focus-within,
-  ::active {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
-  }
-
-  &:focus-within button {
-    color: green;
-  }
-
-  &:focus-within::before {
-    opacity: 1;
-  }
-}
-
-input[type="autocomplete"] {
-  font-size: 2rem;
-  border: none;
-  outline: none;
-  box-sizing: unset;
-  background: transparent;
-  opacity: 0.999;
-  flex: 1;
-  width: 100%;
 }
 </style>
