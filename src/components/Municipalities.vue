@@ -1,24 +1,24 @@
 <template>
   <div>
-    <div class="d-flex">
-      <div
-        class=""
-        v-for="item in municipalities"
-        :key="item.id"
-      >
-        <div class="card">
-          <div class="d-flex justify-around">
-            <h1><strong><i>{{item.description}} </i></strong></h1>
-            <p>: {{item.label}}</p>
+    <main>
+      <h1 class="py-5">Trondheim Municipalities</h1>
+      <section>
+        <article
+          class="flex-element"
+          v-for="item in municipalities"
+          :key="item.id"
+        >
+          <div class="card">
+            <div class="card-header">
+              <h1>{{item.description}} :<span>{{item.label}}</span></h1>
+            </div>
+            <div class="card-footer">
+              <span>Status: {{item.status}}</span>
+            </div>
           </div>
-          <div class="d-flex justify-around">
-            <h1><strong>Status: </strong></h1>
-            <p>{{item.status}}</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
+        </article>
+      </section>
+    </main>
   </div>
 </template>
 
@@ -50,16 +50,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style lang="scss" scoped>
-.card {
-  //width: 30%;
-  border: 1px solid darkblue;
-  padding: 5rem;
-  background: #fbd1b7;
-}
-article {
-  margin: 1rem;
-}
-.md-6 {
-  flex: 6;
+.py-5 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 </style>
