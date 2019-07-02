@@ -1,3 +1,5 @@
+/* flexbox layout
+/* =================================== */
 main {
    max-width: 1000px;
    margin: 0 auto;
@@ -17,6 +19,9 @@ article {
    margin-bottom: 1rem;
    color: #fff;
    text-align: center;
+   display: flex;
+   justify-content: center;
+   padding: 1rem;
 }
 
 .container {
@@ -24,6 +29,15 @@ article {
    margin: auto;
    padding: 24px;
    width: 100%;
+}
+
+.d-flex {
+   display: flex;
+}
+
+.flex-6 {
+   display: flex;
+   flex: 6;
 }
 
 
