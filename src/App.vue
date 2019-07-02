@@ -6,6 +6,7 @@
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -47,5 +48,8 @@ img {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+body {
+  background-color: #f2f2f2;
 }
 </style>
