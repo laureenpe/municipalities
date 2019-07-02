@@ -1,0 +1,35 @@
+main {
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+section {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+article {
+   flex-basis: 100%;
+}
+
+.d-flex {
+   display: flex;
+}
+
+.justify-between {
+   justify-content: space-between;
+
+}
+
+.justify-around {
+   justify-content: space-around;
+}
+
+@media screen and (min-width: 800px) {
+
+   article,
+   aside {
+      flex: 6;
+   }
+}
