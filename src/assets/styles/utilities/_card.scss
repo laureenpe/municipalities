@@ -1,0 +1,34 @@
+.card {
+   align-items: center;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   background-image: linear-gradient(352deg, rgba(192, 27, 115, 1.8) 0%, rgba(255, 154, 0, -0.8) 100%), url("/assets//images//Trondheim.jpg");
+   background-position: center;
+   background-size: 60rem;
+   height: 24rem;
+   width: 18rem;
+   border-radius: 0.3rem;
+   box-shadow: 0 0 2.5rem -0.5rem;
+}
+
+.card-header {
+   display: flex;
+   flex-direction: column;
+   color: white;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 1.3rem;
+   font-weight: bold;
+   text-align: center;
+}
+
+.card-header {
+   h1 {
+      margin-bottom: 0.2rem;
+   }
+
+   span {
+      display: inline;
+
+   }
+}
