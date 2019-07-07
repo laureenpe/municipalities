@@ -1,6 +1,6 @@
-# Trondheim Municipalities
+# Norway Municipalities
 
-### This is the repository for the first prototype of an app card that fetches, shows, and filters municipalities in Trondeim.
+### This is the repository for the first prototype of an app card that fetches, shows, and filters municipalities in Norway.
 
 ## Project setup
 
