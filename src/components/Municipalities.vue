@@ -1,8 +1,8 @@
 <template>
   <div>
     <main>
-      <h1 class="py-5">Trondheim municipalities</h1>
-      <p>Here you cand find the Trondheim municipalities, including its <strong>number</strong>, <strong>name</strong>, and when it will/got <strong>retired</strong>/active.
+      <h1 class="py-5">Norway municipalities</h1>
+      <p>Here you cand find the Norway municipalities, including its <strong>number</strong>, <strong>name</strong>, and when it will/got <strong>retired</strong>/active.
         You can also <strong>filter</strong> by name and for status.
       </p>
       <div class="container">
