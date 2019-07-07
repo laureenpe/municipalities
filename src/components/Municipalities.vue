@@ -2,7 +2,7 @@
   <div>
     <main>
       <h1 class="py-5">Norway municipalities</h1>
-      <p>Here you cand find the Norway municipalities, including its <strong>number</strong>, <strong>name</strong>, and when it will/got <strong>retired</strong>/active.
+      <p class="pa-2">Here you cand find the Norway municipalities, including its <strong>number</strong>, <strong>name</strong>, and when it will/got <strong>retired</strong>/active.
         You can also <strong>filter</strong> by name and for status.
       </p>
       <div class="container">
@@ -132,6 +132,9 @@ p {
 .my-5 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+.pa-2 {
+  padding: 2rem;
 }
 .card {
   background-image: linear-gradient(
