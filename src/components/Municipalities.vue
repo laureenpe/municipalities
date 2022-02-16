@@ -2,8 +2,11 @@
   <div>
     <main>
       <h1 class="py-5">Norway municipalities</h1>
-      <p class="pa-2">Here you cand find the Norway municipalities, including its <strong>number</strong>, <strong>name</strong>, and when it will/got <strong>retired</strong>/active.
-        You can also <strong>filter</strong> by name and for status.
+      <p class="pa-2">
+        Here you cand find the Norway municipalities, including its
+        <strong>number</strong>, <strong>name</strong>, and when it will/got
+        <strong>retired</strong>/active. You can also <strong>filter</strong> by
+        name and for status.
       </p>
       <div class="container">
         <div class="autocomplete d-flex row">
@@ -12,15 +15,12 @@
               v-model="cityName"
               type="autocomplete"
               placeholder="Write the name of the city..."
-            >
+            />
             <button>↩</button>
           </div>
           <span class="custom-dropdown flex-6 my-5">
             <select v-model="selectedStatus">
-              <option
-                disabled
-                value=""
-              >select one</option>
+              <option disabled value="">select one</option>
               <option value="valid">valid</option>
               <option value="retired">retired</option>
               <option value="submitted">submitted</option>
@@ -31,26 +31,19 @@
       </div>
 
       <div v-if="items.length == 0">
-        <img
-          src="../assets/images/loader.svg"
-          alt="loader"
-        >
+        <img src="../assets/images/loader.svg" alt="loader" />
       </div>
 
       <section v-if="items.length > 0">
-        <article
-          class="flex-element"
-          v-for="item in items"
-          :key="item.id"
-        >
+        <article class="flex-element" v-for="item in items" :key="item.id">
           <div class="card">
             <div class="card-header">
-              <h1>{{item.description}} :</h1>
-              <span>{{item.label}}</span>
+              <h1>{{ item.description }} :</h1>
+              <span>{{ item.label }}</span>
             </div>
             <div class="card-footer animate">
               <span>Status:</span>
-              <span> {{item.status}}</span>
+              <span> {{ item.status }}</span>
             </div>
           </div>
         </article>
@@ -61,9 +54,6 @@
 
 <script>
 import axios from "axios";
-import Axios from "axios";
-import { log } from "util";
-import { async } from "q";
 
 var municipalitiesApi =
   "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
@@ -75,7 +65,7 @@ export default {
       municipalities: [],
       items: [],
       selectedStatus: "",
-      cityName: ""
+      cityName: "",
     };
   },
   async mounted() {
@@ -110,8 +100,8 @@ export default {
         const description = item.description.toLowerCase();
         return description.includes(name.toLowerCase());
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
