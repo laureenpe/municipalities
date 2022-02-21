@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "axios": "^0.26.0",
+    "axios": "^0.21.2",
     "copy-webpack-plugin": "6.2.1",
     "core-js": "^3.21.0",
     "vue": "^3.2.31",
